@@ -3,67 +3,61 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ojo Muyiwa Isreal | Data &amp; Business Intelligence Analyst</title>
-<meta name="description" content="Data & Business Intelligence Analyst with 4+ years: SQL, Python, Power BI, Mage ETL and ERP analytics. 40+ production dashboards and pipelines consolidating 600+ data sources." />
-<meta property="og:title" content="Ojo Muyiwa Isreal | Data & BI Analyst" />
-<meta property="og:description" content="40+ Power BI dashboards · Mage ETL pipelines across 600+ data sources · SQL, Python, Power BI" />
+<title>Ojo Muyiwa Isreal | BI &amp; Analytics Engineering</title>
+<meta name="description" content="Data & BI Analyst building the analytics layer for PropTech and payments: Mage ETL pipelines, SQL data models and Power BI reporting." />
+<meta property="og:title" content="Ojo Muyiwa Isreal | BI & Analytics Engineering" />
+<meta property="og:description" content="Mage ETL pipelines, SQL data models and Power BI reporting for PropTech and payments." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --ink:#0b1324; --ink-2:#1e293b; --muted:#5b6678; --line:#e5e9f0; --bg:#f7f9fc; --card:#ffffff;
-    --accent:#0e9f8e; --accent-2:#2563eb; --accent-soft:#e6f6f4;
-    --hero:#0b1324; --hero-2:#111c33;
+    --ink:#0b1324; --ink-2:#1e293b; --body:#334155; --muted:#5b6678; --line:#e5e9f0; --bg:#f7f9fc; --card:#ffffff;
+    --accent:#0e9f8e; --accent-2:#2563eb; --accent-soft:#e6f6f4; --blue-soft:#eef3ff;
+    --hero:#0b1324; --hero-2:#111c33; --code:#0f1a2e;
     --radius:16px; --shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
   body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 
   /* nav */
-  .nav{position:sticky;top:0;z-index:50;background:rgba(11,19,36,.85);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
-  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{color:#fff;font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(11,19,36,.88);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .brand{color:#fff;font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:10px;white-space:nowrap}
   .brand .dot{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-size:13px;font-weight:800}
   .nav ul{display:flex;gap:28px;list-style:none}
   .nav ul a{color:#b8c2d6;font-size:14px;font-weight:500;transition:color .2s}
   .nav ul a:hover{color:#fff}
-  .nav .cta{background:#fff;color:var(--ink);padding:8px 16px;border-radius:999px;font-size:14px;font-weight:600}
+  .nav .cta{background:#fff;color:var(--ink);padding:8px 16px;border-radius:999px;font-size:14px;font-weight:600;white-space:nowrap}
 
   /* hero */
-  .hero{background:radial-gradient(1200px 500px at 85% -10%,rgba(37,99,235,.35),transparent 60%),radial-gradient(900px 500px at -10% 110%,rgba(14,159,142,.30),transparent 60%),linear-gradient(180deg,var(--hero),var(--hero-2));color:#fff;padding:88px 0 96px;overflow:hidden}
-  .hero .wrap{display:grid;grid-template-columns:1.35fr .9fr;gap:56px;align-items:center}
+  .hero{background:radial-gradient(1200px 500px at 85% -10%,rgba(37,99,235,.35),transparent 60%),radial-gradient(900px 500px at -10% 110%,rgba(14,159,142,.30),transparent 60%),linear-gradient(180deg,var(--hero),var(--hero-2));color:#fff;padding:84px 0 100px}
+  .hero .wrap{display:grid;grid-template-columns:1.3fr .9fr;gap:56px;align-items:center}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#7ee3d6;background:rgba(14,159,142,.12);border:1px solid rgba(126,227,214,.25);padding:6px 12px;border-radius:999px;margin-bottom:22px}
   .eyebrow .pulse{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 4px rgba(52,211,153,.2)}
-  .hero h1{font-size:clamp(36px,5vw,58px);line-height:1.05;letter-spacing:-.03em;font-weight:800}
+  .hero h1{font-size:clamp(34px,4.6vw,54px);line-height:1.07;letter-spacing:-.03em;font-weight:800}
   .hero h1 span{background:linear-gradient(90deg,#5eead4,#93c5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero p.lead{margin-top:20px;font-size:18px;color:#c3cbe0;max-width:560px}
-  .hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .hero p.lead{margin-top:20px;font-size:18px;color:#c3cbe0;max-width:580px}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:600;font-size:15px;transition:transform .15s,box-shadow .15s,background .15s}
   .btn:hover{transform:translateY(-1px)}
   .btn-primary{background:linear-gradient(135deg,var(--accent),#0b8577);color:#fff;box-shadow:0 8px 24px rgba(14,159,142,.35)}
-  .btn-ghost{border:1px solid rgba(255,255,255,.2);color:#fff}
+  .btn-ghost{border:1px solid rgba(255,255,255,.22);color:#fff}
   .btn-ghost:hover{background:rgba(255,255,255,.06)}
-  .hero .tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px}
-  .hero .tools span{font-size:13px;color:#cbd5e1;border:1px solid rgba(255,255,255,.12);padding:5px 11px;border-radius:8px;background:rgba(255,255,255,.03)}
-  .portrait{position:relative;justify-self:center;width:100%;max-width:360px}
-  .portrait .frame{aspect-ratio:4/5;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 60px rgba(0,0,0,.35)}
-  .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-  .float{position:absolute;background:#fff;color:var(--ink);border-radius:14px;padding:12px 14px;box-shadow:0 16px 40px rgba(0,0,0,.25);font-size:12px;color:var(--muted);line-height:1.3}
-  .float b{display:block;font-size:20px;color:var(--ink);letter-spacing:-.02em}
-  .float.f1{left:-28px;bottom:48px}
-  .float.f2{right:-22px;top:36px}
+  .portrait{justify-self:center;width:100%;max-width:340px}
+  .icon-portrait{aspect-ratio:1/1;border-radius:32px;border:1px solid rgba(255,255,255,.12);background:radial-gradient(circle at 30% 20%,rgba(94,234,212,.25),transparent 55%),linear-gradient(160deg,#13254a,#0b1324);display:grid;place-items:center;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+  .icon-portrait svg{width:62%;height:auto}
 
-  /* stats */
+  /* proof strip */
   .stats{margin-top:-44px;position:relative;z-index:2}
   .stats .grid{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-  .stat{padding:26px 28px;border-right:1px solid var(--line)}
+  .stat{padding:24px 28px;border-right:1px solid var(--line)}
   .stat:last-child{border-right:0}
-  .stat b{font-size:32px;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+  .stat b{font-size:30px;font-weight:800;letter-spacing:-.03em}
   .stat b em{font-style:normal;color:var(--accent)}
   .stat p{font-size:14px;color:var(--muted);margin-top:2px}
 
@@ -76,47 +70,102 @@
 
   /* about */
   .about{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
-  .about p{color:#334155;font-size:17px;margin-bottom:16px}
+  .about p{color:var(--body);font-size:17px;margin-bottom:16px}
   .pillars{display:grid;gap:14px}
   .pillar{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
   .pillar .ic{flex:none;width:40px;height:40px;border-radius:10px;background:var(--accent-soft);display:grid;place-items:center;color:var(--accent)}
   .pillar h4{font-size:15px}
   .pillar p{font-size:14px;color:var(--muted);margin:2px 0 0}
 
-  /* projects */
-  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-  .proj{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
-  .proj:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(15,23,42,.10)}
-  .proj .thumb{aspect-ratio:16/9;background:#0f1a2e}
-  .proj .thumb svg{width:100%;height:100%;display:block}
-  .proj .body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
-  .proj .cat{font-size:12px;font-weight:600;color:var(--accent-2);text-transform:uppercase;letter-spacing:.08em}
-  .proj h3{font-size:20px;letter-spacing:-.015em;line-height:1.3}
-  .proj p{color:var(--muted);font-size:15px}
-  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  /* case studies */
+  .case{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-bottom:28px;box-shadow:var(--shadow)}
+  .case-head{padding:32px 36px 8px}
+  .case-head .cat{font-size:12px;font-weight:700;color:var(--accent-2);text-transform:uppercase;letter-spacing:.1em}
+  .case-head h3{font-size:clamp(22px,2.6vw,28px);letter-spacing:-.02em;line-height:1.25;margin-top:6px}
+  .case-head .sub{color:var(--muted);margin-top:6px;font-size:15px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
   .tags span{font-size:12px;font-weight:500;color:#0b6b60;background:var(--accent-soft);padding:4px 10px;border-radius:999px}
-  .proj .link{margin-top:auto;font-weight:600;font-size:14px;color:var(--ink);display:inline-flex;gap:6px;align-items:center}
-  .proj .link:hover{color:var(--accent)}
-  .impact{display:flex;gap:18px;font-size:13px;color:var(--ink-2);border-top:1px dashed var(--line);padding-top:12px}
-  .impact b{color:var(--accent)}
-
-  .files{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .pas{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);margin-top:24px}
+  .pas > div{padding:24px 28px;border-right:1px solid var(--line)}
+  .pas > div:last-child{border-right:0}
+  .pas h4{display:flex;align-items:center;gap:8px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2);margin-bottom:10px}
+  .pas h4 i{font-style:normal;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-size:12px;color:#fff;background:var(--accent-2)}
+  .pas > div:nth-child(2) h4 i{background:#7c3aed}
+  .pas > div:nth-child(3) h4 i{background:var(--accent)}
+  .pas p,.pas li{color:var(--body);font-size:15px}
+  .pas ul{list-style:none;display:grid;gap:8px}
+  .pas li{position:relative;padding-left:16px}
+  .pas li:before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:2px;background:currentColor;opacity:.45}
+  .visuals{display:grid;grid-template-columns:1.25fr 1fr;gap:20px;padding:0 36px 28px}
+  .visual{background:var(--code);border-radius:14px;overflow:hidden;border:1px solid #1b2a45}
+  .visual .vt{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #1b2a45;font-size:12px;color:#94a3b8;font-weight:600;letter-spacing:.04em}
+  .visual .vt a{color:#5eead4;font-weight:500}
+  .visual svg{display:block;width:100%;height:auto}
+  pre.code{margin:0;padding:16px 18px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.65;color:#e2e8f0;overflow-x:auto;white-space:pre}
+  pre.code .k{color:#5eead4}.code .c{color:#64748b}.code .f{color:#93c5fd}.code .s{color:#fbbf24}
+  .dashlist{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:0 36px 28px}
+  .dash{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fbfcfe}
+  .dash b{display:block;font-size:14px;margin-bottom:4px}
+  .dash span{font-size:12.5px;color:var(--muted);display:block;line-height:1.45}
+  .dash small{display:block;margin-top:8px;font-size:11px;font-weight:600;color:var(--accent-2);text-transform:uppercase;letter-spacing:.06em}
+  .files{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:16px 36px 24px;border-top:1px solid var(--line);background:#fbfcfe}
   .files .flabel{font-size:12px;font-weight:600;color:var(--muted);margin-right:4px}
-  .files a{display:inline-flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#1e3a8a;background:#eef3ff;border:1px solid #dbe5ff;padding:3px 8px;border-radius:6px;transition:background .15s}
+  .files a{display:inline-flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#1e3a8a;background:var(--blue-soft);border:1px solid #dbe5ff;padding:3px 8px;border-radius:6px;transition:background .15s}
   .files a:hover{background:#dbe5ff}
-  .icon-portrait{aspect-ratio:1/1;border-radius:32px;border:1px solid rgba(255,255,255,.12);background:radial-gradient(circle at 30% 20%,rgba(94,234,212,.25),transparent 55%),linear-gradient(160deg,#13254a,#0b1324);display:grid;place-items:center;box-shadow:0 30px 60px rgba(0,0,0,.35)}
-  .icon-portrait svg{width:62%;height:auto}
+  .note{display:flex;gap:10px;align-items:flex-start;margin:0 36px 24px;padding:12px 14px;border-radius:10px;background:#fff8e6;border:1px solid #fde7a8;color:#7a5600;font-size:13.5px}
+  .note b{color:#5c4100}
+
+  .cases-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .case.compact .case-head{padding:26px 28px 6px}
+  .case.compact .pas{grid-template-columns:1fr}
+  .case.compact .pas > div{border-right:0;border-bottom:1px solid var(--line);padding:18px 28px}
+  .case.compact .pas > div:last-child{border-bottom:0}
+  .case.compact .files{padding:14px 28px 20px}
+  .case.compact .note{margin:0 28px 20px}
+
+  /* click affordances */
+  .files a{cursor:pointer;font-weight:500;box-shadow:0 1px 0 #dbe5ff}
+  .files a .ext{opacity:.6;margin-left:1px;transition:transform .15s,opacity .15s}
+  .files a:hover{background:#dbe5ff;color:#1e40af;transform:translateY(-1px)}
+  .files a:hover .ext{opacity:1;transform:translate(1px,-1px)}
+  .files .flabel{display:inline-flex;align-items:center;gap:6px}
+  .case-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:20px 36px 4px}
+  .case.compact .case-cta{padding:16px 28px 4px}
+  .btn-dark{background:var(--ink);color:#fff;padding:11px 18px;border-radius:10px;font-size:14px;box-shadow:0 6px 16px rgba(11,19,36,.18)}
+  .btn-dark:hover{background:#1e293b}
+  .btn-line{border:1.5px solid var(--line);color:var(--ink);padding:10px 16px;border-radius:10px;font-size:14px;background:#fff}
+  .btn-line:hover{border-color:var(--accent-2);color:var(--accent-2)}
+  .case-cta .hint{font-size:13px;color:var(--muted)}
+  .visual .vt a{display:inline-flex;align-items:center;gap:5px;background:rgba(94,234,212,.12);border:1px solid rgba(94,234,212,.35);padding:4px 9px;border-radius:7px;color:#5eead4;font-weight:600;letter-spacing:0;transition:background .15s}
+  .visual .vt a:hover{background:rgba(94,234,212,.22)}
+  .visual .vt a svg{width:12px;height:12px;display:inline-block;flex:none}
+  .visual .vt a{white-space:nowrap}
+  .lb .close{position:fixed;top:18px;right:18px;display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--ink);font-weight:600;font-size:14px;padding:8px 14px;border-radius:999px;border:0;cursor:pointer}
+  .lb .tip{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);color:#cbd5e1;font-size:13px}
+  .shot .img{position:relative}
+  .zoom{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(11,19,36,.82);color:#fff;font-size:12.5px;font-weight:600;padding:6px 10px;border-radius:999px;backdrop-filter:blur(4px);transition:background .15s}
+  .shot:hover .zoom{background:var(--accent)}
+  .shot .cap a.more{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13.5px;font-weight:600;color:var(--accent-2);border-bottom:1.5px solid rgba(37,99,235,.3);padding-bottom:1px}
+  .shot .cap a.more:hover{border-color:var(--accent-2)}
+  .skill .ev a{border-bottom:1.5px solid rgba(37,99,235,.3)}
+  .skill .ev a:hover{border-color:var(--accent-2)}
+  .about a.inline,.note a{color:var(--accent-2);font-weight:600;border-bottom:1.5px solid rgba(37,99,235,.3)}
   /* gallery */
   .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
   .shot{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:box-shadow .2s}
   .shot:hover{box-shadow:var(--shadow)}
-  .shot .img{display:block;aspect-ratio:16/9;overflow:hidden;background:#eef2f7}
-  .shot img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-  .shot:hover img{transform:scale(1.04)}
-  .shot .cap{padding:16px 18px;display:grid;gap:10px}
-  .shot p{margin-top:-6px!important}
-  .shot h4{font-size:14px;line-height:1.35}
-  .shot p{font-size:13px;color:var(--muted);margin-top:4px}
+  .shot .img{display:block;aspect-ratio:16/9;overflow:hidden;background:#eef2f7;cursor:zoom-in}
+  .shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s}
+  .shot:hover img{transform:scale(1.03)}
+  .shot .cap{padding:16px 18px}
+  .shot h4{font-size:15px}
+  .shot p{font-size:14px;color:var(--muted);margin-top:4px}
+  .shot .cap a.more{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--accent-2)}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;background:rgba(8,12,24,.88);display:none;align-items:center;justify-content:center;padding:24px;z-index:100;cursor:zoom-out}
+  .lb.on{display:flex}
+  .lb img{max-width:min(1200px,100%);max-height:90vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
 
   /* experience */
   .timeline{position:relative;padding-left:28px}
@@ -128,9 +177,10 @@
   .job .co{color:var(--accent-2);font-weight:600;font-size:15px}
   .job .when{font-size:13px;color:var(--muted);text-align:right;white-space:nowrap}
   .job .when b{display:block;color:var(--ink);font-weight:600;font-size:14px}
-  .job ul{list-style:none;display:grid;gap:8px}
-  .job li{position:relative;padding-left:20px;color:#334155;font-size:15px}
+  .job ul{list-style:none;display:grid;gap:9px}
+  .job li{position:relative;padding-left:20px;color:var(--body);font-size:15px}
   .job li:before{content:"";position:absolute;left:2px;top:10px;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+  .job li b{color:var(--ink);font-weight:600}
 
   /* skills */
   .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -139,16 +189,11 @@
   .skill h4 i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
   .chips{display:flex;flex-wrap:wrap;gap:6px}
   .chips span{font-size:13px;padding:5px 10px;border-radius:8px;background:#f1f5f9;color:#1e293b}
-
-  .creds{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
-  .cred{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
-  .cred h4{font-size:15px;margin-bottom:12px}
-  .cred li{list-style:none;display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
-  .cred li:last-child{border-bottom:0}
-  .cred li span{color:var(--muted);white-space:nowrap}
-  .badge{font-size:11px;font-weight:600;color:#9a6700;background:#fff4d6;padding:2px 8px;border-radius:999px;white-space:nowrap}
-  .cred .edu b{display:block;font-size:16px}
-  .cred .edu p{font-size:14px;color:var(--muted);margin-top:4px}
+  .skill .ev{margin-top:14px;font-size:12.5px;color:var(--muted)}
+  .skill .ev a{color:var(--accent-2);font-weight:600}
+  .edu{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+  .edu b{font-size:16px}
+  .edu p{font-size:14px;color:var(--muted)}
 
   /* contact */
   .contact{margin:96px 0 0;background:linear-gradient(135deg,var(--hero),#13254a);color:#fff;border-radius:24px;padding:56px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
@@ -163,32 +208,38 @@
   footer{padding:40px 0;color:var(--muted);font-size:14px}
   footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
-  /* responsive */
   @media (max-width:960px){
     .nav ul{display:none}
-    .hero .wrap,.about,.contact{grid-template-columns:1fr}
-    .portrait{max-width:300px;order:-1}
-    .float.f1{left:-12px}.float.f2{right:-12px}
+    .hero .wrap,.about,.contact,.visuals,.cases-2{grid-template-columns:1fr}
+    .portrait{max-width:260px;order:-1}
     .stats .grid{grid-template-columns:repeat(2,1fr)}
     .stat:nth-child(2){border-right:0}
     .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
     .skills{grid-template-columns:1fr 1fr}
+    .dashlist{grid-template-columns:repeat(2,1fr)}
+    .pas{grid-template-columns:1fr}
+    .pas > div{border-right:0;border-bottom:1px solid var(--line)}
+    .pas > div:last-child{border-bottom:0}
     .sec-head{flex-direction:column;align-items:start}
   }
   @media (max-width:640px){
     .wrap{padding:0 16px}
-    .hero{padding:56px 0 80px}
-    .projects,.skills,.creds,.gallery{grid-template-columns:1fr}
-    .stat{padding:20px}
-    .stat b{font-size:26px}
-    .contact{padding:32px 24px;border-radius:18px}
-    .portrait{max-width:230px}
-    .float{display:none}
+    .hero{padding:48px 0 84px}
+    .portrait{max-width:150px;justify-self:start}
     .icon-portrait{border-radius:50%}
-    .portrait{max-width:180px;justify-self:start}
+    .skills,.gallery,.dashlist{grid-template-columns:1fr}
+    .stat{padding:18px}
+    .stat b{font-size:24px}
+    .case-head,.case.compact .case-head{padding:24px 20px 4px}
+    .pas > div,.case.compact .pas > div{padding:18px 20px}
+    .visuals,.dashlist{padding:0 20px 20px}
+    .files,.case.compact .files{padding:14px 20px 18px}
+    .note,.case.compact .note{margin:0 20px 18px}
+    .contact{padding:32px 22px;border-radius:18px}
     .job{padding:20px}
     .job .when{text-align:left}
     section{padding-top:72px}
+    .nav .cta{padding:7px 12px;font-size:13px}
   }
 </style>
 </head>
@@ -198,29 +249,27 @@
   <div class="wrap">
     <a href="#top" class="brand"><span class="dot">OM</span>Ojo Muyiwa Isreal</a>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Projects</a></li>
+      <li><a href="#work">Case studies</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="cta">Contact me</a>
+    <a href="Ojo_Muyiwa_Isreal_CV.pdf" class="cta" download>Download CV</a>
   </div>
 </nav>
 
 <header class="hero" id="top">
   <div class="wrap">
     <div>
-      <div class="eyebrow"><span class="pulse"></span>Open to remote &amp; contract roles</div>
-      <h1>Data &amp; Business Intelligence Analyst turning <span>complex data into clear decisions.</span></h1>
-      <p class="lead">4+ years building Power BI reporting, SQL data models and Mage ETL pipelines for finance, operations and executive teams in PropTech SaaS and consulting.</p>
+      <div class="eyebrow"><span class="pulse"></span>BI &amp; Analytics Engineering · PropTech &amp; payments</div>
+      <h1>I build the <span>analytics layer</span> that finance and operations teams run on.</h1>
+      <p class="lead">Data &amp; BI Analyst designing ETL pipelines, SQL data models and Power BI reporting on top of ERP and payments data, from raw transactions to the dashboards executives use every morning.</p>
       <div class="actions">
-        <a href="#work" class="btn btn-primary">View my work
+        <a href="#work" class="btn btn-primary">Read the case studies
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="Ojo_Muyiwa_Isreal_CV.pdf" class="btn btn-ghost" download>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download CV</a>
         <a href="https://www.linkedin.com/in/muyiwa-isreal-o/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/MuyiwaIsreal" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <div class="tools">
-        <span>SQL</span><span>Python</span><span>Power BI · DAX</span><span>Mage ETL</span><span>PostgreSQL</span><span>MySQL</span><span>ERPNext</span><span>Tableau</span>
       </div>
     </div>
     <div class="portrait">
@@ -236,8 +285,6 @@
           <rect x="70" y="150" width="60" height="8" rx="2" fill="#1b2a45"/><rect x="56" y="158" width="88" height="10" rx="5" fill="#1b2a45" stroke="rgba(255,255,255,.14)"/>
         </svg>
       </div>
-      <div class="float f1"><b>40+</b>dashboards in production</div>
-      <div class="float f2"><b>600+</b>data sources unified</div>
     </div>
   </div>
 </header>
@@ -246,9 +293,9 @@
   <div class="wrap">
     <div class="grid">
       <div class="stat"><b>4<em>+</em></b><p>years in data &amp; BI</p></div>
-      <div class="stat"><b>40<em>+</em></b><p>Power BI dashboards built</p></div>
-      <div class="stat"><b>600<em>+</em></b><p>data sources in Mage ETL</p></div>
-      <div class="stat"><b>20<em>%</em></b><p>operational efficiency gain</p></div>
+      <div class="stat"><b>40<em>+</em></b><p>production dashboards</p></div>
+      <div class="stat"><b>600<em>+</em></b><p>data sources consolidated</p></div>
+      <div class="stat"><b>~50<em>K</em></b><p>new rows a day in the largest table</p></div>
     </div>
   </div>
 </div>
@@ -259,147 +306,203 @@
     <div class="about">
       <div>
         <div class="kicker">About</div>
-        <h2>I build the reporting layer leaders rely on every day.</h2>
-        <p style="margin-top:20px">I'm a Data &amp; Business Intelligence Analyst with 4+ years turning complex financial, transactional and operational data into clear business decisions.</p>
-        <p>At Venco, a PropTech SaaS company, I built and maintain 40+ Power BI dashboards (alongside Frappe Insights and Metabase) used daily by executives, finance and operations, including real-time payment collection and disbursement tracking. Behind them sit self-hosted Mage ETL pipelines I designed with the IT/dev team, consolidating 600+ data sources into a central reporting database.</p>
-        <p>I hold a B.Sc. in Statistics and bring that rigour to SQL, Python and statistical modelling.</p>
+        <h2>From raw ERP tables to decisions, end to end.</h2>
+        <p style="margin-top:20px">I'm a Data &amp; Business Intelligence Analyst at Venco, a PropTech SaaS platform, where I own the reporting stack: the Mage pipelines that pull from ERPNext, the summary tables and star-schema models behind them, and the Power BI, Frappe Insights and Metabase dashboards that finance, operations and leadership use.</p>
+        <p>Before that I worked with consulting clients on data quality and reporting, and started out cleaning datasets and running statistical analyses as a freelancer. I hold a B.Sc. in Statistics.</p>
       </div>
       <div class="pillars">
-        <div class="pillar"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
-          <div><h4>BI &amp; dashboarding</h4><p>Power BI, DAX and data modelling for Finance, HR, Inventory, CRM and Operations.</p></div></div>
         <div class="pillar"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div>
-          <div><h4>Data engineering</h4><p>Mage ETL, multi-source consolidation and summary tables on PostgreSQL/MySQL.</p></div></div>
-        <div class="pillar"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-          <div><h4>KPIs &amp; insight</h4><p>KPI design, statistical analysis and executive-ready recommendations.</p></div></div>
+          <div><h4>Pipelines &amp; modelling</h4><p>Mage ETL, summary tables and star schemas on PostgreSQL/MySQL.</p></div></div>
+        <div class="pillar"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+          <div><h4>Reporting</h4><p>Power BI and DAX for finance, payments, HR, inventory and CRM.</p></div></div>
+        <div class="pillar"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
+          <div><h4>Statistics</h4><p>Hypothesis testing and regression in Python, reported honestly.</p></div></div>
       </div>
     </div>
   </section>
 
   <section id="work">
     <div class="sec-head">
-      <div><div class="kicker">Selected work</div><h2>Featured projects</h2></div>
-      <p>Real systems and analyses from my work, with company data anonymised. Every file listed opens directly on GitHub.</p>
+      <div><div class="kicker">Case studies</div><h2>Problem, approach, result</h2></div>
+      <p>Company data is anonymised. Where code can be shared, every file opens directly on GitHub.</p>
     </div>
-    <div class="projects">
 
-      <article class="proj">
-        <a class="thumb" href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/README.md" target="_blank" rel="noopener">
-          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pipeline from ERPNext through Mage to Power BI">
-            <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#0e9f8e"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs>
-            <rect width="400" height="225" fill="#0f1a2e"/>
-            <g font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#e2e8f0" text-anchor="middle">
-              <rect x="22" y="86" width="98" height="52" rx="10" fill="#1b2a45"/><text x="71" y="116">ERPNext</text>
-              <rect x="151" y="86" width="98" height="52" rx="10" fill="#1b2a45"/><text x="200" y="116">Mage ETL</text>
-              <rect x="280" y="86" width="98" height="52" rx="10" fill="url(#g1)"/><text x="329" y="116" fill="#fff">Power BI</text>
+    <!-- Flagship -->
+    <article class="case">
+      <div class="case-head">
+        <div class="cat">Flagship · Analytics engineering</div>
+        <h3>A single source of truth for a PropTech SaaS company</h3>
+        <p class="sub">ERPNext → Mage ETL → summary tables → Power BI star schema → dashboards for every department</p>
+        <div class="tags"><span>Mage</span><span>SQL</span><span>PostgreSQL</span><span>MySQL</span><span>ERPNext</span><span>Power BI</span><span>DAX</span></div>
+      </div>
+      <div class="case-cta">
+        <a class="btn btn-dark" href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 011.2-3.2 4.4 4.4 0 01.1-3.2s1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5a4.4 4.4 0 01.1 3.2 4.7 4.7 0 011.2 3.2c0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>View full case study on GitHub<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <span class="hint">or open individual files below ↓</span>
+      </div>
+      <div class="pas">
+        <div><h4><i>1</i>Problem</h4>
+          <ul>
+            <li>Each department exported raw ERP data to Excel and built its own reports.</li>
+            <li>Teams reported conflicting numbers from the same data.</li>
+            <li>BI queries against large ERP tables were slow and loaded production.</li>
+            <li>Leadership had no daily, cross-department view.</li>
+          </ul></div>
+        <div><h4><i>2</i>Approach</h4>
+          <ul>
+            <li>Built five Mage pipelines (finance, HR, inventory, CRM, ops KPIs), with the IT/dev team, that aggregate ERPNext into summary tables.</li>
+            <li>Modelled a star schema with shared date, department and account dimensions.</li>
+            <li>Used Power BI Import mode on the small summary tables, with a scheduled daily refresh.</li>
+          </ul></div>
+        <div><h4><i>3</i>Result</h4>
+          <ul>
+            <li>One agreed set of numbers across finance, operations and leadership.</li>
+            <li>Dashboards no longer query the production ERP, and refreshes run automatically.</li>
+            <li>Finance tracks tenant inflows, vendor disbursements and cash position daily.</li>
+          </ul></div>
+      </div>
+
+      <div class="visuals">
+        <div class="visual">
+          <div class="vt"><span>PIPELINE ARCHITECTURE</span><a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/docs/architecture.md" target="_blank" rel="noopener">Open architecture.md<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+          <svg viewBox="0 0 560 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architecture: ERPNext modules feed five Mage pipelines, which write summary tables to an analytics database, which feeds Power BI dashboards for executives, finance and operations.">
+            <defs>
+              <linearGradient id="pb" x1="0" x2="1"><stop offset="0" stop-color="#0e9f8e"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+              <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5eead4"/></marker>
+            </defs>
+            <g font-family="Inter,sans-serif" font-size="10.5" fill="#94a3b8" font-weight="700" letter-spacing=".08em">
+              <text x="16" y="24">SOURCE</text><text x="168" y="24">ETL (MAGE)</text><text x="330" y="24">STORAGE</text><text x="452" y="24">BI LAYER</text>
             </g>
-            <g stroke="#5eead4" stroke-width="2" fill="none" stroke-dasharray="4 4"><path d="M122 112h26M251 112h26"/></g>
-            <text x="200" y="182" font-family="Inter,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Finance · HR · Inventory · CRM · Operations</text>
-          </svg>
-        </a>
-        <div class="body">
-          <div class="cat">Business intelligence system</div>
-          <h3>PropTech BI Dashboard Suite</h3>
-          <p>Departments were exporting raw ERP data to Excel and reporting conflicting numbers. I built a single source of truth: Mage pipelines that consolidate 600+ data sources into summary tables, feeding 40+ Power BI dashboards for executives, finance and operations, including real-time collection and disbursement tracking.</p>
-          <div class="tags"><span>Power BI</span><span>DAX</span><span>Mage</span><span>ERPNext</span><span>PostgreSQL</span><span>MySQL</span></div>
-          <div class="impact"><div><b>40+</b> dashboards</div><div><b>600+</b> sources</div><div><b>~50K</b> rows/day</div></div>
-          <div class="files"><span class="flabel">Files on GitHub</span><a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/README.md" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>README.md</a><a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/docs/architecture.md" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>architecture.md</a><a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/powerbi/data_model.md" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>data_model.md</a><a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/powerbi/dax_measures.md" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>dax_measures.md</a><a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/pipeline/finance_summary.sql" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>finance_summary.sql</a><a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/pipeline/hr_summary.sql" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>hr_summary.sql</a><a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/pipeline/inventory_summary.sql" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>inventory_summary.sql</a><a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/pipeline/crm_summary.sql" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>crm_summary.sql</a></div>
-        </div>
-      </article>
-
-      <article class="proj">
-        <a class="thumb" href="https://github.com/MuyiwaIsreal/GatewayGuard-Statistical-Benchmarking-Predictive-Analysis-of-Payment-Success-Rates/blob/main/README.md" target="_blank" rel="noopener">
-          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Payment success rates by gateway">
-            <rect width="400" height="225" fill="#0f1a2e"/>
-            <g fill="#1b2a45"><rect x="58" y="60" width="44" height="110" rx="4"/><rect x="122" y="60" width="44" height="110" rx="4"/><rect x="186" y="60" width="44" height="110" rx="4"/><rect x="250" y="60" width="44" height="110" rx="4"/><rect x="314" y="60" width="44" height="110" rx="4"/></g>
-            <g fill="#0e9f8e"><rect x="58" y="74" width="44" height="96" rx="4"/><rect x="122" y="72" width="44" height="98" rx="4"/><rect x="186" y="75" width="44" height="95" rx="4"/><rect x="250" y="73" width="44" height="97" rx="4"/><rect x="314" y="74" width="44" height="96" rx="4"/></g>
-            <text x="200" y="38" font-family="JetBrains Mono,monospace" font-size="12" fill="#e2e8f0" text-anchor="middle">χ² = 0.67 · p = 0.95 · V = 0.005</text>
-            <text x="200" y="196" font-family="Inter,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Success rate across 5 gateways · 30,000 transactions</text>
-          </svg>
-        </a>
-        <div class="body">
-          <div class="cat">Statistical analysis</div>
-          <h3>GatewayGuard: Payment Gateway Benchmarking</h3>
-          <p>Tested whether payment failures across Adyen, Flutterwave, PayPal, Razorpay and Stripe are driven by the gateway or by amount and geography. A Chi-Square test found no significant gateway effect, and a logistic regression quantified success odds to support evidence-based routing.</p>
-          <div class="tags"><span>Python</span><span>Chi-Square</span><span>Logistic Regression</span><span>scikit-learn</span></div>
-          <div class="impact"><div><b>30K</b> transactions</div><div><b>5</b> gateways</div></div>
-          <div class="files"><span class="flabel">Files on GitHub</span><a href="https://github.com/MuyiwaIsreal/GatewayGuard-Statistical-Benchmarking-Predictive-Analysis-of-Payment-Success-Rates/blob/main/README.md" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>README.md (code &amp; results)</a><a href="https://github.com/MuyiwaIsreal/GatewayGuard-Statistical-Benchmarking-Predictive-Analysis-of-Payment-Success-Rates/blob/main/populated_use_case_data.csv" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>populated_use_case_data.csv</a><a href="https://github.com/MuyiwaIsreal/GatewayGuard-Statistical-Benchmarking-Predictive-Analysis-of-Payment-Success-Rates/blob/main/model_odds_ratios.csv" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>model_odds_ratios.csv</a><a href="https://github.com/MuyiwaIsreal/GatewayGuard-Statistical-Benchmarking-Predictive-Analysis-of-Payment-Success-Rates/blob/main/country_gateway_success_matrix.csv" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>country_gateway_success_matrix.csv</a></div>
-        </div>
-      </article>
-
-      <article class="proj">
-        <a class="thumb" href="https://github.com/MuyiwaIsreal/daily-disbursement-collection-summary-sql/blob/main/README.md" target="_blank" rel="noopener">
-          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SQL union of disbursements and collections">
-            <rect width="400" height="225" fill="#0f1a2e"/>
-            <rect x="24" y="24" width="352" height="177" rx="10" fill="#132036"/>
-            <g fill="#334155"><circle cx="42" cy="40" r="4"/><circle cx="56" cy="40" r="4"/><circle cx="70" cy="40" r="4"/></g>
-            <g font-family="JetBrains Mono,monospace" font-size="12.5">
-              <text x="44" y="78" fill="#5eead4">SELECT</text><text x="104" y="78" fill="#e2e8f0">'Disbursement' AS type, ...</text>
-              <text x="44" y="100" fill="#5eead4">FROM</text><text x="88" y="100" fill="#e2e8f0">disbursements</text>
-              <text x="44" y="128" fill="#fbbf24">UNION ALL</text>
-              <text x="44" y="156" fill="#5eead4">SELECT</text><text x="104" y="156" fill="#e2e8f0">'Collection' AS type, ...</text>
-              <text x="44" y="178" fill="#5eead4">FROM</text><text x="88" y="178" fill="#e2e8f0">collections</text>
+            <g font-family="JetBrains Mono,monospace" font-size="10.5" fill="#cbd5e1">
+              <rect x="12" y="38" width="128" height="276" rx="10" fill="#132036" stroke="#1f3352"/>
+              <text x="24" y="60" fill="#fff" font-family="Inter,sans-serif" font-weight="700" font-size="12">ERPNext</text>
+              <text x="24" y="92">GL Entry</text><text x="24" y="140">Salary Slip</text><text x="24" y="188">Stock Ledger</text><text x="24" y="236">Lead / Opportunity</text><text x="24" y="284">Tickets · Tasks</text>
+            </g>
+            <g font-family="Inter,sans-serif" font-size="11" fill="#e2e8f0" font-weight="600">
+              <rect x="164" y="76" width="134" height="26" rx="7" fill="#1b2a45"/><text x="176" y="93">finance_pipeline</text>
+              <rect x="164" y="124" width="134" height="26" rx="7" fill="#1b2a45"/><text x="176" y="141">hr_pipeline</text>
+              <rect x="164" y="172" width="134" height="26" rx="7" fill="#1b2a45"/><text x="176" y="189">inventory_pipeline</text>
+              <rect x="164" y="220" width="134" height="26" rx="7" fill="#1b2a45"/><text x="176" y="237">crm_pipeline</text>
+              <rect x="164" y="268" width="134" height="26" rx="7" fill="#1b2a45"/><text x="176" y="285">ops_kpi_pipeline</text>
+            </g>
+            <g stroke="#5eead4" stroke-width="1.5" fill="none" marker-end="url(#ar)" opacity=".85">
+              <path d="M128 89H162"/><path d="M128 137H162"/><path d="M128 185H162"/><path d="M128 233H162"/><path d="M128 281H162"/>
+              <path d="M298 89C314 89 312 176 328 176"/><path d="M298 137C312 137 314 176 328 176"/><path d="M298 185H328"/><path d="M298 233C312 233 314 176 328 176"/><path d="M298 281C314 281 312 176 328 176"/>
+              <path d="M424 176H446"/>
+            </g>
+            <g font-family="Inter,sans-serif" text-anchor="middle">
+              <rect x="330" y="128" width="94" height="96" rx="10" fill="#132036" stroke="#1f3352"/>
+              <ellipse cx="377" cy="152" rx="22" ry="7" fill="none" stroke="#93c5fd" stroke-width="1.5"/><path d="M355 152v20c0 4 10 7 22 7s22-3 22-7v-20" fill="none" stroke="#93c5fd" stroke-width="1.5"/>
+              <text x="377" y="198" font-size="11" fill="#fff" font-weight="700">Analytics DB</text>
+              <text x="377" y="212" font-size="9.5" fill="#94a3b8">summary tables</text>
+              <rect x="448" y="104" width="100" height="144" rx="10" fill="url(#pb)"/>
+              <text x="498" y="132" font-size="12" fill="#fff" font-weight="700">Power BI</text>
+              <text x="498" y="148" font-size="9.5" fill="#e0f2fe">star schema</text>
+              <text x="498" y="160" font-size="9.5" fill="#e0f2fe">daily refresh</text>
+              <line x1="462" y1="172" x2="534" y2="172" stroke="rgba(255,255,255,.3)"/>
+              <text x="498" y="192" font-size="10" fill="#fff">Executives</text><text x="498" y="210" font-size="10" fill="#fff">Finance</text><text x="498" y="228" font-size="10" fill="#fff">Operations</text>
             </g>
           </svg>
-        </a>
-        <div class="body">
-          <div class="cat">Finance SQL</div>
-          <h3>Daily Disbursement &amp; Collection Summary</h3>
-          <p>Production SQL that unifies daily disbursements and collections into one analytics-ready dataset with USD normalisation, powering cash-flow monitoring, reconciliation and finance dashboards.</p>
-          <div class="tags"><span>SQL</span><span>Finance</span><span>Reconciliation</span></div>
-          <div class="files"><span class="flabel">Files on GitHub</span><a href="https://github.com/MuyiwaIsreal/daily-disbursement-collection-summary-sql/blob/main/README.md" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>README.md (query &amp; docs)</a></div>
+        </div>
+        <div class="visual">
+          <div class="vt"><span>DAX · FINANCE DASHBOARD</span><a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/powerbi/dax_measures.md" target="_blank" rel="noopener">Open dax_measures.md<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+<pre class="code"><span class="c">-- Revenue vs prior month</span>
+<span class="f">Revenue MoM %</span> =
+<span class="k">VAR</span> CurrentMonth = [Revenue MTD]
+<span class="k">VAR</span> PriorMonth   =
+    <span class="k">CALCULATE</span>( [Revenue MTD],
+        <span class="k">DATEADD</span>( 'Date'[Date], -1, <span class="s">MONTH</span> ) )
+<span class="k">RETURN</span>
+    <span class="k">DIVIDE</span>( CurrentMonth - PriorMonth,
+            PriorMonth, 0 )
+
+<span class="c">-- Receivables overdue 30+ days</span>
+<span class="f">Receivables Overdue 30d</span> =
+<span class="k">CALCULATE</span>(
+    <span class="k">SUM</span>( receivables_aging[outstanding_amount] ),
+    receivables_aging[aging_days] &gt; 30 )</pre>
+        </div>
+      </div>
+
+      <div class="dashlist">
+        <div class="dash"><small>Executives</small><b>Financial overview</b><span>Revenue vs target, gross margin trend, receivables aging, P&amp;L comparison</span></div>
+        <div class="dash"><small>Finance</small><b>Collections &amp; disbursements</b><span>Tenant payment inflows, vendor payouts and cash position, updated daily</span></div>
+        <div class="dash"><small>HR</small><b>Payroll &amp; headcount</b><span>Headcount by department, monthly payroll cost, leave utilisation</span></div>
+        <div class="dash"><small>Operations</small><b>Inventory</b><span>Stock on hand by warehouse, turnover, days of stock, low-stock alerts</span></div>
+        <div class="dash"><small>Sales</small><b>CRM pipeline</b><span>Pipeline value by stage, conversion rates, sales cycle length</span></div>
+      </div>
+
+      <div class="files"><span class="flabel"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 011.2-3.2 4.4 4.4 0 01.1-3.2s1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5a4.4 4.4 0 01.1 3.2 4.7 4.7 0 011.2 3.2c0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>Open on GitHub</span>
+        <a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/README.md" target="_blank" rel="noopener" title="Open README.md on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>README.md<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/docs/architecture.md" target="_blank" rel="noopener" title="Open architecture.md on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>architecture.md<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/powerbi/data_model.md" target="_blank" rel="noopener" title="Open data_model.md on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>data_model.md<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/powerbi/dax_measures.md" target="_blank" rel="noopener" title="Open dax_measures.md on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>dax_measures.md<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/pipeline/finance_summary.sql" target="_blank" rel="noopener" title="Open finance_summary.sql on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>finance_summary.sql<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/pipeline/hr_summary.sql" target="_blank" rel="noopener" title="Open hr_summary.sql on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>hr_summary.sql<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/pipeline/inventory_summary.sql" target="_blank" rel="noopener" title="Open inventory_summary.sql on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>inventory_summary.sql<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a href="https://github.com/MuyiwaIsreal/proptech-bi-dashboard-suite/blob/main/pipeline/crm_summary.sql" target="_blank" rel="noopener" title="Open crm_summary.sql on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>crm_summary.sql<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </article>
+
+    <div class="cases-2">
+      <!-- GatewayGuard -->
+      <article class="case compact">
+        <div class="case-head">
+          <div class="cat">Statistical analysis · Payments</div>
+          <h3>GatewayGuard: do payment gateways really differ?</h3>
+          <div class="tags"><span>Python</span><span>pandas</span><span>SciPy</span><span>statsmodels</span><span>scikit-learn</span></div>
+        </div>
+        <div class="case-cta">
+          <a class="btn btn-dark" href="https://github.com/MuyiwaIsreal/GatewayGuard-Statistical-Benchmarking-Predictive-Analysis-of-Payment-Success-Rates/blob/main/README.md" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 011.2-3.2 4.4 4.4 0 01.1-3.2s1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5a4.4 4.4 0 01.1 3.2 4.7 4.7 0 011.2 3.2c0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>View code &amp; results<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+        <div class="pas">
+          <div><h4><i>1</i>Problem</h4><p>Payment failures cost revenue and trust. Is one of five gateways (Adyen, Flutterwave, PayPal, Razorpay, Stripe) actually worse, or are failures driven by amount and geography?</p></div>
+          <div><h4><i>2</i>Approach</h4><p>Defined success as completed <em>and</em> authorised, ran a Chi-Square test of independence across gateways, then fitted a logistic regression on gateway, amount and country to get odds ratios.</p></div>
+          <div><h4><i>3</i>Result</h4><p>No significant gateway or amount effect (χ² = 0.67, p = 0.95, Cramér's V = 0.005). The one real signal: transactions from India had ~17% lower odds of success (OR 0.83, p = 0.006). Recommendation: route on fees, not perceived reliability, and investigate the India corridor.</p></div>
+        </div>
+        <div class="note"><span>ⓘ</span><span><b>Synthetic data.</b> The 30,000 transactions are simulated to mirror real gateway logs; no real customer or company data is used.</span></div>
+        <div class="files"><span class="flabel"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 011.2-3.2 4.4 4.4 0 01.1-3.2s1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5a4.4 4.4 0 01.1 3.2 4.7 4.7 0 011.2 3.2c0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>Open on GitHub</span>
+          <a href="https://github.com/MuyiwaIsreal/GatewayGuard-Statistical-Benchmarking-Predictive-Analysis-of-Payment-Success-Rates/blob/main/README.md" target="_blank" rel="noopener" title="Open README.md on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>README.md<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <a href="https://github.com/MuyiwaIsreal/GatewayGuard-Statistical-Benchmarking-Predictive-Analysis-of-Payment-Success-Rates/blob/main/model_odds_ratios.csv" target="_blank" rel="noopener" title="Open model_odds_ratios.csv on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>model_odds_ratios.csv<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <a href="https://github.com/MuyiwaIsreal/GatewayGuard-Statistical-Benchmarking-Predictive-Analysis-of-Payment-Success-Rates/blob/main/country_gateway_success_matrix.csv" target="_blank" rel="noopener" title="Open country_gateway_success_matrix.csv on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>country_gateway_success_matrix.csv<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
         </div>
       </article>
 
-      <article class="proj">
-        <a class="thumb" href="https://github.com/MuyiwaIsreal/lead-communication-activity-report-sql/blob/main/README.md" target="_blank" rel="noopener">
-          <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CTE flow for lead communications">
-            <rect width="400" height="225" fill="#0f1a2e"/>
-            <g font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#e2e8f0" text-anchor="middle">
-              <rect x="20" y="92" width="96" height="40" rx="10" fill="#1b2a45"/><text x="68" y="117">lead_filter</text>
-              <rect x="146" y="50" width="118" height="40" rx="10" fill="#1b2a45"/><text x="205" y="75">direct comms</text>
-              <rect x="146" y="134" width="118" height="40" rx="10" fill="#1b2a45"/><text x="205" y="159">comms via issues</text>
-              <rect x="294" y="92" width="88" height="40" rx="10" fill="#0e9f8e"/><text x="338" y="117" fill="#fff">combined</text>
-            </g>
-            <g stroke="#5eead4" stroke-width="2" fill="none"><path d="M116 112C130 112 132 70 146 70M116 112C130 112 132 154 146 154M264 70C278 70 280 112 294 112M264 154C278 154 280 112 294 112"/></g>
-          </svg>
-        </a>
-        <div class="body">
-          <div class="cat">CRM analytics</div>
-          <h3>CRM Lead Communication Tracker</h3>
-          <p>A multi-step CTE query that joins leads with their direct and support-ticket communications in ERPNext CRM, giving sales leadership one dataset to track engagement frequency, channels and response patterns.</p>
-          <div class="tags"><span>SQL</span><span>CTEs</span><span>ERPNext / Frappe CRM</span></div>
-          <div class="files"><span class="flabel">Files on GitHub</span><a href="https://github.com/MuyiwaIsreal/lead-communication-activity-report-sql/blob/main/README.md" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>README.md (query &amp; docs)</a></div>
+      <!-- Payments & CRM SQL (anonymised, no public code) -->
+      <article class="case compact">
+        <div class="case-head">
+          <div class="cat">Production SQL · Payments &amp; CRM</div>
+          <h3>Daily cash-flow and lead-engagement datasets</h3>
+          <div class="tags"><span>SQL</span><span>CTEs</span><span>UNION ALL</span><span>Frappe / ERPNext</span></div>
         </div>
+        <div class="case-cta">
+          <a class="btn btn-line" href="mailto:muyiwaojo33@gmail.com?subject=SQL%20walkthrough%20request">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Request a walkthrough</a>
+          <span class="hint">Code not public (employer system)</span>
+        </div>
+        <div class="pas">
+          <div><h4><i>1</i>Problem</h4><p>Finance reconciled disbursements and collections from separate sources, and sales couldn't see all communication with a lead when some of it happened on support tickets.</p></div>
+          <div><h4><i>2</i>Approach</h4><p>Wrote one query that unions daily disbursements and collections into a single dataset with a USD-normalised amount, and a multi-step CTE query that joins each lead's direct and ticket-linked communications.</p></div>
+          <div><h4><i>3</i>Result</h4><p>Two analytics-ready datasets feeding the cash-flow, reconciliation and CRM engagement dashboards, replacing manual exports.</p></div>
+        </div>
+        <div class="note"><span>ⓘ</span><span><b>Employer code.</b> These queries run on a production system, so the source isn't published. A walkthrough with anonymised table names is available on request (button above).</span></div>
       </article>
-
     </div>
   </section>
 
   <section id="gallery">
     <div class="sec-head">
-      <div><div class="kicker">Gallery</div><h2>Dashboards &amp; analysis samples</h2></div>
-      <p>Click any sample to open its source file (.pbix, .xlsx, .sql) on GitHub.</p>
+      <div><div class="kicker">Earlier work</div><h2>Dashboard &amp; analysis samples</h2></div>
+      <p>Click any image to view it full size.</p>
     </div>
     <div class="gallery">
       <div class="shot">
-        <a class="img" href="https://github.com/MuyiwaIsreal/Ticket_Analysis_Dashboard/blob/main/Ticket_Analysis_Report.pbix" target="_blank" rel="noopener"><img src="images/ticket.png" alt="Ticketing analysis Power BI dashboard" loading="lazy" /></a>
-        <div class="cap"><h4>Ticketing Analysis Dashboard</h4><p>Power BI · sales, customers, operations</p>
-          <div class="files"><span class="flabel">Files on GitHub</span><a href="https://github.com/MuyiwaIsreal/Ticket_Analysis_Dashboard/blob/main/Ticket_Analysis_Report.pbix" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>Ticket_Analysis_Report.pbix</a><a href="https://github.com/MuyiwaIsreal/Ticket_Analysis_Dashboard/blob/main/ticketAnalysisDataset.xlsx" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>ticketAnalysisDataset.xlsx</a></div></div>
+        <a class="img" href="images/ticket.png" data-lb><img src="images/ticket.png" alt="Ticket volume Power BI dashboard showing tickets created and closed, closure rate, SLA, priority, category and satisfaction" loading="lazy" /><span class="zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Click to enlarge</span></a>
+        <div class="cap"><h4>IT Ticketing Dashboard (Power BI)</h4><p>Ticket volume, closure rate, SLA attainment, priority mix and satisfaction for an IT service desk.</p>
+          <a class="more" href="https://github.com/MuyiwaIsreal/Ticket_Analysis_Dashboard/blob/main/README.md" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 011.2-3.2 4.4 4.4 0 01.1-3.2s1-.3 3.3 1.2a11.4 11.4 0 016 0C17.3 4.7 18.3 5 18.3 5a4.4 4.4 0 01.1 3.2 4.7 4.7 0 011.2 3.2c0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z"/></svg>Project notes on GitHub<svg class="ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
       </div>
       <div class="shot">
-        <a class="img" href="https://github.com/MuyiwaIsreal/Excel-Project-Portolio/blob/main/Excel%20-%20LOOKUP,%20INDEX,%20MATCH,%20SUMIFS.xlsx" target="_blank" rel="noopener"><img src="images/excel.png" alt="Advanced Excel reporting workbook" loading="lazy" /></a>
-        <div class="cap"><h4>Advanced Excel Reporting</h4><p>LOOKUP, INDEX/MATCH, SUMIFS · automated reports</p>
-          <div class="files"><span class="flabel">Files on GitHub</span><a href="https://github.com/MuyiwaIsreal/Excel-Project-Portolio/blob/main/Excel%20-%20LOOKUP,%20INDEX,%20MATCH,%20SUMIFS.xlsx" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>LOOKUP, INDEX, MATCH, SUMIFS.xlsx</a><a href="https://github.com/MuyiwaIsreal/Excel-Project-Portolio/blob/main/Practical_Excel_Test.xlsx" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>Practical_Excel_Test.xlsx</a></div></div>
-      </div>
-      <div class="shot">
-        <a class="img" href="https://github.com/MuyiwaIsreal/Sql-Query-to-Import-data-from-a-Csv-File/blob/main/importQuery.sql" target="_blank" rel="noopener"><img src="images/Sql.png" alt="SQL script" loading="lazy" /></a>
-        <div class="cap"><h4>SQL CSV Import Script</h4><p>Bulk-loading CSV data into SQL tables for analysis</p>
-          <div class="files"><span class="flabel">Files on GitHub</span><a href="https://github.com/MuyiwaIsreal/Sql-Query-to-Import-data-from-a-Csv-File/blob/main/importQuery.sql" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>importQuery.sql</a></div></div>
-      </div>
-      <div class="shot">
-        <a class="img" href="https://github.com/MuyiwaIsreal/MuyiwaIsreal.github.io/blob/main/images/Pareto.png" target="_blank" rel="noopener"><img src="images/Pareto.png" alt="Pareto analysis of customer revenue" loading="lazy" /></a>
-        <div class="cap"><h4>Revenue Pareto Analysis</h4><p>80/20 concentration across 18 customers</p>
-          <div class="files"><span class="flabel">Files on GitHub</span><a href="https://github.com/MuyiwaIsreal/MuyiwaIsreal.github.io/blob/main/images/Pareto.png" target="_blank" rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>Pareto.png</a></div></div>
+        <a class="img" href="images/Pareto.png" data-lb><img src="images/Pareto.png" alt="Pareto chart of revenue by customer with cumulative percentage line" loading="lazy" /><span class="zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>Click to enlarge</span></a>
+        <div class="cap"><h4>Revenue Concentration (Pareto)</h4><p>Revenue by customer with a cumulative share curve, showing how few accounts drive most revenue.</p></div>
       </div>
     </div>
   </section>
@@ -415,13 +518,12 @@
           <div class="when"><b>Oct 2024 – Present</b>Lagos, Nigeria · Remote-enabled</div>
         </header>
         <ul>
-          <li>Built and maintain 40+ interactive Power BI dashboards (alongside Frappe Insights and Metabase) covering Finance &amp; Revenue, HR &amp; Payroll, Inventory &amp; Supply Chain, CRM &amp; Sales and Operational KPIs, used daily by executives, finance and operations teams.</li>
-          <li>Built collection and disbursement tracking dashboards giving finance real-time visibility into tenant payment inflows, vendor disbursements and cash position across the platform.</li>
-          <li>Designed and manage self-hosted Mage ETL pipelines with the IT/dev team, consolidating 600+ data sources into a central reporting database (largest table growing by ~50K rows daily), with optimised summary tables that automate report refreshes and cut query load on production databases.</li>
-          <li>Defined, implemented and monitored KPIs across business units, surfacing performance gaps that contributed to a 20% increase in operational efficiency.</li>
-          <li>Administered ERPNext across Accounts, HR &amp; Payroll, Inventory, CRM/Sales and Projects, ensuring data integrity, workflow automation and consistent data standards.</li>
-          <li>Designed and maintained PostgreSQL and MySQL databases with schemas optimised for analytical queries on large transactional datasets.</li>
-          <li>Ran deep-dive analyses on customer behaviour, product performance and supply chain data, presenting recommendations to executives.</li>
+          <li><b>Replaced department-level Excel reporting with one source of truth:</b> 40+ Power BI dashboards (plus Frappe Insights and Metabase) now used daily by executives, finance and operations.</li>
+          <li><b>Gave finance a real-time view of cash:</b> collection and disbursement dashboards tracking tenant inflows, vendor payouts and cash position.</li>
+          <li><b>Took reporting load off the production ERP:</b> Mage ETL pipelines, built with the IT/dev team, consolidate 600+ data sources into summary tables that refresh automatically (largest table grows by ~50K rows a day).</li>
+          <li><b>Helped leadership spot underperforming areas</b> by defining and tracking KPIs across business units; internal tracking pointed to roughly a 20% improvement in operational efficiency.</li>
+          <li><b>Kept data consistent across departments</b> as ERPNext administrator for Accounts, HR &amp; Payroll, Inventory, CRM/Sales and Projects.</li>
+          <li><b>Turned deep-dive analyses into executive decisions</b> on customer behaviour, product performance and supply chain.</li>
         </ul>
       </div>
       <div class="job">
@@ -430,11 +532,10 @@
           <div class="when"><b>Aug 2023 – Aug 2024</b>Lagos, Nigeria</div>
         </header>
         <ul>
-          <li>Developed Power BI, Tableau and Excel dashboards that presented complex findings clearly to non-technical client stakeholders.</li>
-          <li>Ran data quality assessments and remediation plans, improving accuracy, consistency and completeness across client datasets.</li>
-          <li>Designed data models and applied statistical techniques across clients' operations, sales and finance functions.</li>
-          <li>Analysed client workflows to find process bottlenecks, producing recommendations that measurably improved turnaround times.</li>
-          <li>Translated business requirements into analytical specifications and delivered with IT teams on schedule.</li>
+          <li><b>Shortened client turnaround times</b> by analysing workflows, finding process bottlenecks and recommending fixes.</li>
+          <li><b>Improved the accuracy and completeness of client datasets</b> through data quality assessments and remediation plans.</li>
+          <li><b>Made findings usable for non-technical stakeholders</b> with Power BI, Tableau and Excel dashboards.</li>
+          <li><b>Delivered analytics projects on schedule</b> by turning business requirements into specifications for IT teams.</li>
         </ul>
       </div>
       <div class="job">
@@ -443,9 +544,8 @@
           <div class="when"><b>Sep 2022 – Jul 2023</b>Remote</div>
         </header>
         <ul>
-          <li>Cleaned, restructured and standardised messy Excel datasets for clients, preparing them for analysis and reporting.</li>
-          <li>Delivered statistical analysis for student research projects, from data preparation to plain-language findings.</li>
-          <li>Managed client requirements, deadlines and revisions end to end.</li>
+          <li><b>Delivered analysis-ready datasets</b> by cleaning, de-duplicating and standardising messy client spreadsheets.</li>
+          <li><b>Gave student researchers clear, defensible results</b> with statistical analysis explained in plain language.</li>
         </ul>
       </div>
     </div>
@@ -453,32 +553,23 @@
 
   <section id="skills">
     <div class="sec-head">
-      <div><div class="kicker">Toolkit</div><h2>Skills &amp; credentials</h2></div>
+      <div><div class="kicker">Toolkit</div><h2>Skills, with evidence</h2></div>
+      <p>Only tools I've used in the work shown on this page.</p>
     </div>
     <div class="skills">
-      <div class="skill"><h4><i></i>BI &amp; Visualisation</h4><div class="chips"><span>Power BI</span><span>DAX</span><span>Data modelling</span><span>Tableau</span><span>Frappe Insights</span><span>Metabase</span><span>Advanced Excel</span></div></div>
-      <div class="skill"><h4><i></i>Languages</h4><div class="chips"><span>SQL</span><span>PostgreSQL</span><span>MySQL</span><span>Python</span><span>pandas</span><span>NumPy</span><span>scikit-learn</span></div></div>
-      <div class="skill"><h4><i></i>Data Integration</h4><div class="chips"><span>Mage ETL/ELT</span><span>Multi-source consolidation</span><span>Summary tables</span><span>Data warehousing</span><span>Query optimisation</span></div></div>
-      <div class="skill"><h4><i></i>Analytics</h4><div class="chips"><span>Statistical analysis</span><span>KPI design</span><span>Forecasting</span><span>Predictive modelling</span><span>Trend analysis</span></div></div>
-      <div class="skill"><h4><i></i>Data Quality &amp; Automation</h4><div class="chips"><span>Assessments</span><span>Validation</span><span>Remediation</span><span>Process documentation</span><span>Power Automate</span></div></div>
-      <div class="skill"><h4><i></i>Systems &amp; Tools</h4><div class="chips"><span>ERPNext</span><span>Jira</span><span>Asana</span><span>Trello</span><span>Frappe Office</span><span>Microsoft Office</span></div></div>
+      <div class="skill"><h4><i></i>Data engineering</h4>
+        <div class="chips"><span>SQL</span><span>CTEs</span><span>PostgreSQL</span><span>MySQL</span><span>Mage ETL</span><span>Summary-table design</span><span>ERPNext</span></div>
+        <p class="ev">Evidence: <a href="#work">PropTech pipeline ↑</a>, payments &amp; CRM SQL</p></div>
+      <div class="skill"><h4><i></i>BI &amp; modelling</h4>
+        <div class="chips"><span>Power BI</span><span>DAX</span><span>Star schema</span><span>Metabase</span><span>Frappe Insights</span><span>Tableau</span><span>Excel</span></div>
+        <p class="ev">Evidence: <a href="#work">dashboard suite ↑</a>, <a href="#gallery">ticketing dashboard ↑</a></p></div>
+      <div class="skill"><h4><i></i>Statistics &amp; Python</h4>
+        <div class="chips"><span>Python</span><span>pandas</span><span>SciPy</span><span>statsmodels</span><span>scikit-learn</span><span>Hypothesis testing</span><span>Logistic regression</span></div>
+        <p class="ev">Evidence: <a href="#work">GatewayGuard ↑</a>, B.Sc. Statistics</p></div>
     </div>
-    <div class="creds">
-      <div class="cred">
-        <h4>Certifications</h4>
-        <ul>
-          <li>Data Analysis Certification · New Horizon System Solutions<span>2022</span></li>
-          <li>ICT Fundamentals · New Horizon System Solutions<span>2021</span></li>
-        </ul>
-      </div>
-      <div class="cred">
-        <h4>Education</h4>
-        <div class="edu">
-          <b>B.Sc. Statistics</b>
-          <p>Ekiti State University, Ado-Ekiti · 2023</p>
-          <p style="margin-top:12px">Relevant coursework: Statistical Modelling, Probability Theory, Regression Analysis, Research Methods, Data Structures</p>
-        </div>
-      </div>
+    <div class="edu">
+      <div><b>B.Sc. Statistics</b><p>Ekiti State University, Ado-Ekiti · 2023</p></div>
+      <p>Coursework: Statistical Modelling, Probability Theory, Regression Analysis, Research Methods, Data Structures</p>
     </div>
   </section>
 
@@ -486,7 +577,8 @@
     <div style="position:relative;z-index:1">
       <div class="kicker" style="color:#5eead4">Contact</div>
       <h2>Let's work together</h2>
-      <p>I'm open to data analysis and business intelligence roles and contract projects, including remote work. Based in Lagos, Nigeria (UTC+1).</p>
+      <p>Open to BI, analytics engineering and data analysis roles, full-time or contract, including remote. Based in Lagos, Nigeria (UTC+1).</p>
+      <div class="actions"><a href="Ojo_Muyiwa_Isreal_CV.pdf" class="btn btn-primary" download>Download CV</a></div>
     </div>
     <div class="clist">
       <a href="mailto:muyiwaojo33@gmail.com"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>muyiwaojo33@gmail.com</a>
@@ -501,9 +593,20 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Ojo Muyiwa Isreal</span>
-    <span>Data &amp; Business Intelligence Analyst · Lagos, Nigeria</span>
+    <span>BI &amp; Analytics Engineering · Lagos, Nigeria</span>
   </div>
 </footer>
 
+<div class="lb" id="lb" aria-hidden="true"><button class="close" type="button" aria-label="Close image">✕ Close</button><img alt="" /><span class="tip">Click anywhere or press Esc to close</span></div>
+<script>
+  (function(){
+    var lb=document.getElementById('lb'), im=lb.querySelector('img');
+    document.querySelectorAll('[data-lb]').forEach(function(a){
+      a.addEventListener('click',function(e){e.preventDefault();im.src=a.getAttribute('href');im.alt=a.querySelector('img').alt;lb.classList.add('on');});
+    });
+    lb.addEventListener('click',function(){lb.classList.remove('on');});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on');});
+  })();
+</script>
 </body>
 </html>
