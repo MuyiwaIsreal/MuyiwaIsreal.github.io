@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ticket Analysis Dashboard | Ojo Muyiwa Isreal</title>
+<meta name="description" content="Interactive web version of my Power BI IT ticketing dashboard: filter by year, month, priority, severity, category and work type." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f1a2e'/%3E%3Ccircle cx='19' cy='33' r='9' fill='none' stroke='%235eead4' stroke-width='5'/%3E%3Cpath d='M33 44V24l8 12 8-12v20' fill='none' stroke='%2393c5fd' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='49' cy='24' r='4' fill='%235eead4'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{--ink:#1b1340;--muted:#6b6489;--line:#e7e2f6;--bg:#f4f1fc;--card:#fff;--p1:#4908A1;--p2:#A255F9;--p3:#C09DEF;--b1:#019DE1;--b2:#610BD7;--ok:#16a34a;--bad:#dc2626}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .top{background:#0b1324;color:#fff}
+  .top .in{max-width:1280px;margin:0 auto;padding:0 20px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .top .back{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:#cbd5e1}
+  .top .back:hover{color:#fff}
+  .top .gh{font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.2);padding:7px 12px;border-radius:999px}
+  .top .gh:hover{background:rgba(255,255,255,.08)}
+  .wrap{max-width:1280px;margin:0 auto;padding:22px 20px 40px}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+  h1{font-size:clamp(22px,3vw,30px);letter-spacing:-.02em}
+  .sub{color:var(--muted);font-size:14px;margin-top:4px;max-width:720px}
+  .badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--p1);background:#ede4ff;border:1px solid #d9c7ff;padding:5px 10px;border-radius:999px}
+  .grid{display:grid;grid-template-columns:230px 1fr;gap:16px}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 2px rgba(27,19,64,.04),0 6px 18px rgba(27,19,64,.05)}
+  .filters{padding:16px;align-self:start;position:sticky;top:12px}
+  .filters h3{font-size:14px;display:flex;align-items:center;gap:8px;margin-bottom:12px}
+  .f{margin-bottom:12px}
+  .f label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:4px}
+  .f select{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:14px;background:#fbfaff;color:var(--ink);cursor:pointer}
+  .f select:focus{outline:2px solid var(--p2);outline-offset:1px}
+  .reset{width:100%;margin-top:6px;padding:10px;border:0;border-radius:9px;background:var(--p2);color:#fff;font:inherit;font-weight:600;cursor:pointer}
+  .reset:hover{background:var(--p1)}
+  .hint{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.5}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px}
+  .kpi{padding:14px 16px}
+  .kpi span{font-size:12.5px;color:var(--muted);font-weight:600}
+  .kpi b{display:block;font-size:26px;letter-spacing:-.02em;margin:4px 0 2px}
+  .kpi small{font-size:12.5px;font-weight:600}
+  .up{color:var(--ok)}.down{color:var(--bad)}.flat{color:var(--muted)}
+  .charts{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+  .c{padding:14px 16px;min-width:0}
+  .c h4{font-size:13.5px;margin-bottom:8px;display:flex;justify-content:space-between;gap:8px}
+  .c h4 em{font-style:normal;font-weight:500;color:var(--muted);font-size:12px}
+  .c .box{position:relative;height:210px}
+  .s4{grid-column:span 4}.s6{grid-column:span 6}.s8{grid-column:span 8}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;min-height:0;margin-bottom:10px}
+  .chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;background:#ede4ff;color:var(--p1);padding:4px 6px 4px 10px;border-radius:999px;border:0;cursor:pointer;font-family:inherit}
+  .chip:hover{background:#dccbff}
+  .loading{position:fixed;inset:0;background:rgba(244,241,252,.94);display:grid;place-items:center;z-index:20;text-align:center}
+  .loading .sp{width:42px;height:42px;border-radius:50%;border:4px solid #e2d6ff;border-top-color:var(--p2);animation:r 0.9s linear infinite;margin:0 auto 14px}
+  @keyframes r{to{transform:rotate(360deg)}}
+  .loading p{color:var(--muted);font-size:14px}
+  .err{display:none;color:var(--bad);font-weight:600;margin-top:8px}
+  footer{max-width:1280px;margin:0 auto;padding:0 20px 30px;color:var(--muted);font-size:12.5px}
+  @media (max-width:1000px){.grid{grid-template-columns:1fr}.filters{position:static}.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 12px}.kpis{grid-template-columns:repeat(2,1fr)}.s4,.s6,.s8{grid-column:span 12}}
+  @media (max-width:560px){.fgrid{grid-template-columns:1fr 1fr}.kpi b{font-size:22px}.top .gh{display:none}}
+</style>
+</head>
+<body>
+<div class="top"><div class="in">
+  <a class="back" href="./#gallery">← Back to portfolio</a>
+  <a class="gh" href="https://github.com/MuyiwaIsreal/Ticket_Analysis_Dashboard" target="_blank" rel="noopener">View source data on GitHub ↗</a>
+</div></div>
+
+<div class="wrap">
+  <div class="head">
+    <div>
+      <h1>Ticket Analysis Dashboard</h1>
+      <p class="sub">An interactive web version of my Power BI report, built from the same dataset and matching its measures. Use the filters, or click any bar or slice to filter the whole page.</p>
+    </div>
+    <span class="badge">● Live · 84,353 ticket records · 2020–2023</span>
+  </div>
+
+  <div class="grid">
+    <aside class="panel filters">
+      <h3>⚲ Filters</h3>
+      <div class="fgrid">
+        <div class="f"><label for="fYear">Year</label><select id="fYear"></select></div>
+        <div class="f"><label for="fMonth">Month</label><select id="fMonth"></select></div>
+        <div class="f"><label for="fPri">Priority</label><select id="fPri"></select></div>
+        <div class="f"><label for="fSev">Severity</label><select id="fSev"></select></div>
+        <div class="f"><label for="fWt">Work type</label><select id="fWt"></select></div>
+        <div class="f"><label for="fCat">Request category</label><select id="fCat"></select></div>
+      </div>
+      <button class="reset" id="reset" type="button">Reset filters</button>
+      <p class="hint">Tip: click a bar or slice in any chart to filter by it. Click it again to clear.</p>
+    </aside>
+
+    <main>
+      <div class="chips" id="chips"></div>
+      <div class="kpis">
+        <div class="panel kpi"><span>Tickets created</span><b id="kCreated">–</b><small id="kCreatedLy"></small></div>
+        <div class="panel kpi"><span>Tickets closed</span><b id="kClosed">–</b><small id="kClosedLy"></small></div>
+        <div class="panel kpi"><span>Closure rate</span><b id="kRate">–</b><small id="kRateLy"></small></div>
+        <div class="panel kpi"><span>Closed within SLA</span><b id="kSla">–</b><small id="kSlaPct"></small></div>
+      </div>
+      <div class="charts">
+        <div class="panel c s4"><h4>Tickets by priority <em>click to filter</em></h4><div class="box"><canvas id="cPri"></canvas></div></div>
+        <div class="panel c s4"><h4>Tickets by category <em>click to filter</em></h4><div class="box"><canvas id="cCat"></canvas></div></div>
+        <div class="panel c s4"><h4>Tickets by severity <em>click to filter</em></h4><div class="box"><canvas id="cSev"></canvas></div></div>
+        <div class="panel c s8"><h4>Tickets over time <em>created vs closed</em></h4><div class="box"><canvas id="cTime"></canvas></div></div>
+        <div class="panel c s4"><h4>Tickets by work type <em>click to filter</em></h4><div class="box"><canvas id="cWt"></canvas></div></div>
+        <div class="panel c s6"><h4>Top 5 IT agents <em>tickets closed</em></h4><div class="box"><canvas id="cAgent"></canvas></div></div>
+        <div class="panel c s6"><h4>Satisfaction rating <em id="avgSat">avg –</em></h4><div class="box"><canvas id="cSat"></canvas></div></div>
+      </div>
+    </main>
+  </div>
+</div>
+<footer>Built by Ojo Muyiwa Isreal with SheetJS and Chart.js. Data: the public sample ticketing dataset in my GitHub repo. Agent names aren't in the source file, so agents are shown by ID.</footer>
+
+<div class="loading" id="loading"><div><div class="sp"></div><p id="loadMsg">Loading 84,000 ticket records…</p><p class="err" id="err">Couldn't load the data. Please refresh the page.</p></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  var SRC='https://raw.githubusercontent.com/MuyiwaIsreal/Ticket_Analysis_Dashboard/main/ticketAnalysisDataset.xlsx';
+  var EPOCH=Date.UTC(1899,11,30);
+  var MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var PRI=['High','Mid','Low'], SEV=['Normal','Low','Minor','Major','Urgent'], CAT=['System','Login Access','Software','Hardware'], WT=['Service Request','Incident'];
+  var R=[]; var years=[];
+  var F={year:null,month:'All',pri:'All',sev:'All',wt:'All',cat:'All'};
+  var charts={};
+  var fmt=function(n){return n.toLocaleString('en-US');};
+  function $(id){return document.getElementById(id);}
+
+  function load(){
+    fetch(SRC).then(function(r){if(!r.ok)throw new Error('http');return r.arrayBuffer();}).then(function(buf){
+      $('loadMsg').textContent='Preparing the dashboard…';
+      setTimeout(function(){parse(buf);},20);
+    }).catch(function(){$('err').style.display='block';});
+  }
+
+  function parse(buf){
+    var wb=XLSX.read(buf,{type:'array'});
+    var rows=XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{raw:true});
+    var ys={};
+    rows.forEach(function(x){
+      var serial=+x['Date Opened'];
+      var res=+x['Resolution Time (Days)']||0;
+      var d=new Date(EPOCH+serial*86400000), c=new Date(EPOCH+(serial+res)*86400000);
+      var oy=d.getUTCFullYear(), cy=c.getUTCFullYear();
+      ys[oy]=1;
+      R.push({id:x['ID Ticket'],oy:oy,om:d.getUTCMonth(),cy:cy,cm:c.getUTCMonth(),ag:x['Agent ID'],cat:x['Request Category'],sev:x['Severity'],pri:x['Priority'],wt:x['Work Type'],sla:x['SLA']==='Within SLA',sat:+x['Satisfaction Rate']});
+    });
+    years=Object.keys(ys).map(Number).sort();
+    F.year=years[years.length-1];
+    setupFilters(); buildCharts(); render();
+    $('loading').style.display='none';
+  }
+
+  function opts(el,list,all){
+    el.innerHTML=(all?'<option value="All">All</option>':'')+list.map(function(v){return '<option value="'+v+'">'+v+'</option>';}).join('');
+  }
+  function setupFilters(){
+    opts($('fYear'),years,false); $('fYear').value=F.year;
+    $('fMonth').innerHTML='<option value="All">All</option>'+MONTHS.map(function(m,i){return '<option value="'+i+'">'+m+'</option>';}).join('');
+    opts($('fPri'),PRI,true); opts($('fSev'),SEV,true); opts($('fWt'),WT,true); opts($('fCat'),CAT,true);
+    [['fYear','year'],['fMonth','month'],['fPri','pri'],['fSev','sev'],['fWt','wt'],['fCat','cat']].forEach(function(p){
+      $(p[0]).addEventListener('change',function(e){F[p[1]]=p[1]==='year'?+e.target.value:e.target.value;render();});
+    });
+    $('reset').addEventListener('click',function(){F={year:years[years.length-1],month:'All',pri:'All',sev:'All',wt:'All',cat:'All'};render();});
+  }
+  function syncFilters(){
+    $('fYear').value=F.year;$('fMonth').value=F.month;$('fPri').value=F.pri;$('fSev').value=F.sev;$('fWt').value=F.wt;$('fCat').value=F.cat;
+    var names={pri:'Priority',sev:'Severity',wt:'Work type',cat:'Category',month:'Month'};
+    var html='';
+    Object.keys(names).forEach(function(k){
+      if(F[k]!=='All'){var v=k==='month'?MONTHS[+F[k]]:F[k];html+='<button class="chip" type="button" data-k="'+k+'">'+names[k]+': '+v+' ✕</button>';}
+    });
+    $('chips').innerHTML=html;
+    Array.prototype.forEach.call(document.querySelectorAll('.chip'),function(b){b.addEventListener('click',function(){F[b.getAttribute('data-k')]='All';render();});});
+  }
+
+  function dimOk(r,skip){
+    return (skip==='pri'||F.pri==='All'||r.pri===F.pri)&&(skip==='sev'||F.sev==='All'||r.sev===F.sev)&&(skip==='wt'||F.wt==='All'||r.wt===F.wt)&&(skip==='cat'||F.cat==='All'||r.cat===F.cat);
+  }
+  function inOpen(r,y){return r.oy===y&&(F.month==='All'||r.om===+F.month);}
+  function inClose(r,y){return r.cy===y&&(F.month==='All'||r.cm===+F.month);}
+  function distinct(pred){var s=new Set();for(var i=0;i<R.length;i++){if(pred(R[i]))s.add(R[i].id);}return s.size;}
+  function distinctBy(pred,key,keys){var m={};keys.forEach(function(k){m[k]=new Set();});for(var i=0;i<R.length;i++){var r=R[i];if(pred(r)&&m[r[key]])m[r[key]].add(r.id);}return keys.map(function(k){return m[k].size;});}
+
+  function delta(cur,prev,el,pp){
+    if(!prev){el.textContent='no prior-year data';el.className='flat';return;}
+    var v=pp?(cur-prev)*100:(cur/prev-1)*100;
+    el.textContent=(v>=0?'▲ ':'▼ ')+Math.abs(v).toFixed(pp?2:1)+(pp?' pts':'%')+' vs last year';
+    el.className=v>=0?'up':'down';
+  }
+
+  function render(){
+    syncFilters();
+    var y=F.year, ly=y-1;
+    var created=distinct(function(r){return inOpen(r,y)&&dimOk(r);});
+    var createdLy=distinct(function(r){return inOpen(r,ly)&&dimOk(r);});
+    var closed=distinct(function(r){return inClose(r,y)&&dimOk(r);});
+    var closedLy=distinct(function(r){return inClose(r,ly)&&dimOk(r);});
+    var sla=distinct(function(r){return inClose(r,y)&&dimOk(r)&&r.sla;});
+    $('kCreated').textContent=fmt(created); delta(created,createdLy,$('kCreatedLy'));
+    $('kClosed').textContent=fmt(closed); delta(closed,closedLy,$('kClosedLy'));
+    var rate=created?closed/created:0, rateLy=createdLy?closedLy/createdLy:0;
+    $('kRate').textContent=(rate*100).toFixed(2)+'%'; delta(rate,createdLy?rateLy:0,$('kRateLy'),true);
+    $('kSla').textContent=fmt(sla); $('kSlaPct').textContent='Achieved: '+(closed?(sla/closed*100).toFixed(1):'0.0')+'%'; $('kSlaPct').className='flat';
+
+    setData('cPri',distinctBy(function(r){return inOpen(r,y)&&dimOk(r,'pri');},'pri',PRI),'pri',PRI);
+    setData('cCat',distinctBy(function(r){return inOpen(r,y)&&dimOk(r,'cat');},'cat',CAT),'cat',CAT);
+    setData('cSev',distinctBy(function(r){return inOpen(r,y)&&dimOk(r,'sev');},'sev',SEV),'sev',SEV);
+    setData('cWt',distinctBy(function(r){return inOpen(r,y)&&dimOk(r,'wt');},'wt',WT),'wt',WT);
+
+    var cr=[],cl=[];
+    for(var m=0;m<12;m++){
+      (function(m){
+        cr.push(distinct(function(r){return r.oy===y&&r.om===m&&dimOk(r);}));
+        cl.push(distinct(function(r){return r.cy===y&&r.cm===m&&dimOk(r);}));
+      })(m);
+    }
+    charts.cTime.data.datasets[0].data=cr; charts.cTime.data.datasets[1].data=cl;
+    charts.cTime.data.datasets[0].pointRadius=MONTHS.map(function(_,i){return F.month!=='All'&&+F.month===i?6:2;});
+    charts.cTime.update();
+
+    var ag={};for(var i=0;i<R.length;i++){var r=R[i];if(inClose(r,y)&&dimOk(r)){(ag[r.ag]=ag[r.ag]||new Set()).add(r.id);}}
+    var top=Object.keys(ag).map(function(k){return [k,ag[k].size];}).sort(function(a,b){return b[1]-a[1];}).slice(0,5);
+    charts.cAgent.data.labels=top.map(function(t){return 'Agent '+t[0];}); charts.cAgent.data.datasets[0].data=top.map(function(t){return t[1];}); charts.cAgent.update();
+
+    var sat=distinctBy(function(r){return inOpen(r,y)&&dimOk(r);},'sat',[5,4,3,2,1]);
+    var sum=0,n=0;for(var j=0;j<R.length;j++){var q=R[j];if(inOpen(q,y)&&dimOk(q)){sum+=q.sat;n++;}}
+    $('avgSat').textContent='avg '+(n?(sum/n).toFixed(1):'–')+' ★';
+    charts.cSat.data.datasets[0].data=sat; charts.cSat.update();
+  }
+
+  function setData(id,data,key,labels){
+    var c=charts[id]; c.data.datasets[0].data=data;
+    var base=c.$base;
+    c.data.datasets[0].backgroundColor=labels.map(function(l,i){return F[key]==='All'||F[key]===l?base[i%base.length]:'#e4def3';});
+    c.update();
+  }
+
+  function mk(id,type,labels,colors,key,horizontal){
+    var ctx=$(id);
+    var c=new Chart(ctx,{type:type,data:{labels:labels,datasets:[{data:labels.map(function(){return 0;}),backgroundColor:colors,borderWidth:type==='doughnut'?2:0,borderColor:'#fff',borderRadius:type==='bar'?5:0,maxBarThickness:34}]},
+      options:{responsive:true,maintainAspectRatio:false,indexAxis:horizontal?'y':'x',cutout:type==='doughnut'?'62%':undefined,
+        plugins:{legend:{display:type==='doughnut',position:'right',labels:{boxWidth:12,font:{family:'Inter',size:12}}},tooltip:{callbacks:{label:function(t){var tot=t.dataset.data.reduce(function(a,b){return a+b;},0);var v=t.parsed.x!==undefined&&horizontal?t.parsed.x:(type==='doughnut'?t.parsed:t.parsed.y);return ' '+fmt(v)+(tot?' ('+(v/tot*100).toFixed(1)+'%)':'');}}}},
+        scales:type==='doughnut'?{}:{x:{grid:{display:!horizontal},ticks:{font:{family:'Inter',size:11}}},y:{grid:{display:horizontal?false:true},ticks:{font:{family:'Inter',size:11}}}},
+        onHover:function(e,el){e.native.target.style.cursor=key&&el.length?'pointer':'default';},
+        onClick:function(e,el){if(!key||!el.length)return;var v=labels[el[0].index];F[key]=F[key]===v?'All':v;render();}}});
+    c.$base=colors; charts[id]=c;
+  }
+
+  function buildCharts(){
+    Chart.defaults.font.family='Inter';Chart.defaults.color='#4b4570';
+    mk('cPri','doughnut',PRI,['#4908A1','#A255F9','#C09DEF'],'pri');
+    mk('cCat','bar',CAT,['#6d28d9','#7c3aed','#8b5cf6','#a78bfa'],'cat',true);
+    mk('cSev','bar',SEV,['#4908A1','#6d28d9','#8b5cf6','#a78bfa','#c4b5fd'],'sev',true);
+    mk('cWt','doughnut',WT,['#019DE1','#610BD7'],'wt');
+    mk('cAgent','bar',['','','','',''],['#6d28d9'],null,true);
+    mk('cSat','bar',['5 ★','4 ★','3 ★','2 ★','1 ★'],['#4908A1','#6d28d9','#8b5cf6','#a78bfa','#c4b5fd'],null,true);
+    charts.cTime=new Chart($('cTime'),{type:'line',data:{labels:MONTHS,datasets:[
+      {label:'Created',data:[],borderColor:'#A255F9',backgroundColor:'rgba(162,85,249,.12)',fill:true,tension:.35,pointRadius:2},
+      {label:'Closed',data:[],borderColor:'#019DE1',backgroundColor:'rgba(1,157,225,0)',tension:.35,pointRadius:2}]},
+      options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',align:'end',labels:{boxWidth:12}}},
+        scales:{x:{grid:{display:false}},y:{grid:{color:'#efeaf9'}}},
+        onHover:function(e,el){e.native.target.style.cursor=el.length?'pointer':'default';},
+        onClick:function(e,el){if(!el.length)return;var m=String(el[0].index);F.month=F.month===m?'All':m;render();}}});
+  }
+
+  load();
+})();
+</script>
+</body>
+</html>
